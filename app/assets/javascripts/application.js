@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require vendor/underscore-min
+//= require vendor/backbone.min
 //= require_tree .
