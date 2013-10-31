@@ -44,3 +44,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#T o enable features such as static asset serving and logging on Heroku
+gem 'rails_12factor', group: :production
+
+ruby "2.0.0"
