@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FfProto::Application.config.secret_key_base = '419474cf4570dc288cc78040696daf4c4d2ac22a8563d16588f23af7d164f9695c69acfc41ad37135792094b77e6f279eaba5ffdda47be3bbad68d4a8b07a3c6'
+FfProto::Application.config.secret_key_base = '6badfeee88b61383f55415cbec06b7e1b9e1533d8de9da6f552d2b17e7307a528b4bf179be3f43167582fa5ee9e01849fcf233d995acd26969863cd28a9d47e4'
