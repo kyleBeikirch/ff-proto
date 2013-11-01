@@ -12,15 +12,15 @@ console.log("Running ...")
 // });
 
 function initialize() {
-    var myLatlng = new google.maps.LatLng(51.65905179951626, 7.3835928124999555);
+    var myLatlng = new google.maps.LatLng(37.760407, -122.463904);
     var myOptions = {
-        zoom: 8,
+        zoom: 12,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-    var decodedPath = google.maps.geometry.encoding.decodePath('}~kvHmzrr@ba\\hnc@jiu@r{Zqx~@hjp@pwEhnc@zhu@zflAbxn@fhjBvqHroaAgcnAp}gAeahAtqGkngAinc@_h|@r{Zad\\y|_D}_y@swg@ysg@}llBpoZqa{@xrw@~eBaaX}{uAero@uqGadY}nr@`dYs_NquNgbjAf{l@|yh@bfc@}nr@z}q@i|i@zgz@r{ZhjFr}gApob@ff}@laIsen@dgYhdPvbIren@');
+    var decodedPath = google.maps.geometry.encoding.decodePath('maneFjvmjVab@z@g@_XoKo_@sNf@cG{OkH{fArNbaBkMkC?nPotB?cBbLoUb[vGrSaBnFjHv`@{JvLiJ_DsInFrXzOvj@rNnAnd@jHnKcBrI~CbQmAzTtBfE~HoF~MoZfEj}A~C?fEjWbQoKja@wBnFgOfOcLsXc|A~C_{@_I_g@fEgTsIsSbB_g@wG_SyEkC_~AzEyBsDgJf@gE~M_InAcLcLoFSjCoK{EgEf@gEcG_SrI_S_D_IrD{@wGgaArDoF_IobAvVgEdBgJ|gB{Ty@_S`Vs]SgE');
     var decodedLevels = decodeLevels("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 
     var setRegion = new google.maps.Polyline({
@@ -43,4 +43,8 @@ function decodeLevels(encodedLevelsString) {
     return decodedLevels;
 }
 
-initialize();
+$('document').ready(function()
+{
+    initialize();
+});
+
