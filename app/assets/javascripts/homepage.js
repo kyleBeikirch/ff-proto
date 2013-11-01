@@ -1,15 +1,14 @@
 console.log("Running ...")
-// $.ajax({
-//     url: 'https://www.strava.com/oauth/token',
-//     data: {"client_id": '48' , "client_secret": '2776c1edb8022ecef401bb0cb92a3c882dc393b7'},
-//     type: "POST",
-//     success: function (data) {
-//         console.log(data);
-//     },
-//     error: function(XMLHttpRequest, textStatus, errorThrown) {
-//         console.log("Ajax error");
-//     }
-// });
+$.ajax({
+    url: 'https://www.strava.com/api/v3/clubs/3641/activities?access_token=83ebeabdec09f6670863766f792ead24d61fe3f9',
+    type: "GET",
+    success: function (data) {
+        console.log(data);
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+        console.log("Ajax error");
+    }
+});
 
 function initialize() {
     var myLatlng = new google.maps.LatLng(37.760407, -122.463904);
@@ -23,11 +22,12 @@ function initialize() {
     var decodedPath = google.maps.geometry.encoding.decodePath('maneFjvmjVab@z@g@_XoKo_@sNf@cG{OkH{fArNbaBkMkC?nPotB?cBbLoUb[vGrSaBnFjHv`@{JvLiJ_DsInFrXzOvj@rNnAnd@jHnKcBrI~CbQmAzTtBfE~HoF~MoZfEj}A~C?fEjWbQoKja@wBnFgOfOcLsXc|A~C_{@_I_g@fEgTsIsSbB_g@wG_SyEkC_~AzEyBsDgJf@gE~M_InAcLcLoFSjCoK{EgEf@gEcG_SrI_S_D_IrD{@wGgaArDoF_IobAvVgEdBgJ|gB{Ty@_S`Vs]SgE');
     var decodedLevels = decodeLevels("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
 
+
     var setRegion = new google.maps.Polyline({
         path: decodedPath,
         levels: decodedLevels,
         strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
+        strokeOpacity: .4,
         strokeWeight: 2,
         map: map
     });
@@ -45,6 +45,6 @@ function decodeLevels(encodedLevelsString) {
 
 $('document').ready(function()
 {
-    initialize();
+    //initialize();
 });
 
