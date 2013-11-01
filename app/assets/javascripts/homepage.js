@@ -1,27 +1,44 @@
 console.log("Running ...")
-$.ajax({
-    url: 'https://www.strava.com/api/v3/clubs/3641/activities?access_token=83ebeabdec09f6670863766f792ead24d61fe3f9',
-    type: "GET",
-    success: function (data) {
-        console.log(data);
-    },
-    error: function(XMLHttpRequest, textStatus, errorThrown) {
-        console.log("Ajax error");
-    }
-});
+var map;
 
-function initialize() {
+function loadData() {
+    $.ajax({
+        url: 'assets/fireflies.json',
+        type: "GET",
+        success: function (data) {
+            parseData(data);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log("Ajax error");
+        }
+    });
+}
+
+
+function initializeMap() {
     var myLatlng = new google.maps.LatLng(37.760407, -122.463904);
     var myOptions = {
         zoom: 12,
         center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeid: google.maps.MapTypeId.ROADMAP
     }
-    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
 
-    var decodedPath = google.maps.geometry.encoding.decodePath('maneFjvmjVab@z@g@_XoKo_@sNf@cG{OkH{fArNbaBkMkC?nPotB?cBbLoUb[vGrSaBnFjHv`@{JvLiJ_DsInFrXzOvj@rNnAnd@jHnKcBrI~CbQmAzTtBfE~HoF~MoZfEj}A~C?fEjWbQoKja@wBnFgOfOcLsXc|A~C_{@_I_g@fEgTsIsSbB_g@wG_SyEkC_~AzEyBsDgJf@gE~M_InAcLcLoFSjCoK{EgEf@gEcG_SrI_S_D_IrD{@wGgaArDoF_IobAvVgEdBgJ|gB{Ty@_S`Vs]SgE');
+
+}
+
+function parseData(data) {
+    _(data).each(function(item)
+    {
+       addRouteToMap(item.map.summary_polyline);
+    });
+}
+
+
+function addRouteToMap(path)
+{
+    var decodedPath = google.maps.geometry.encoding.decodePath(path);
     var decodedLevels = decodeLevels("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-
 
     var setRegion = new google.maps.Polyline({
         path: decodedPath,
@@ -45,6 +62,7 @@ function decodeLevels(encodedLevelsString) {
 
 $('document').ready(function()
 {
-    //initialize();
+    initializeMap();
+    loadData();
 });
 
