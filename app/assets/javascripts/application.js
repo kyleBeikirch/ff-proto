@@ -10,5 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery_ujs
+//= require vendor/jquery-2.0.3.min
+//= require vendor/underscore-min
+//= require vendor/backbone.min
 //= require_tree .
