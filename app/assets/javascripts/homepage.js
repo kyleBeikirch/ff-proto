@@ -3,7 +3,7 @@ var map;
 
 function loadData() {
     $.ajax({
-        url: 'assets/fireflies.json',
+        url: '/assets/fireflies.json',
         type: "GET",
         success: function (data) {
             parseData(data);
