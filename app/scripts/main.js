@@ -9,6 +9,18 @@ window.ffProto = {
     init: function () {
         'use strict';
         console.log('Hello from Backbone!');
+        $.ajax({
+        type: "POST",
+        url: "https://www.strava.com/oauth/token?client_id=48&client_secret=2776c1edb8022ecef401bb0cb92a3c882dc393b7",
+        success: function(data)
+        {
+            console.log(data);
+        },
+        error: function(e)
+        {
+            console.log(e);
+        }
+        });
     }
 };
 
