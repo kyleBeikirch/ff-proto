@@ -17,7 +17,7 @@ window.ffProto = {
             data: {
                 'client_id' : '48',
                 'client_secret' : '2776c1edb8022ecef401bb0cb92a3c882dc393b7',
-                'code' : '351cf0edd483866ae0289e0e041f695ed6188800',
+                'code' : getParameterByName('code'),
             },
             dataType: "jsonp",
             url: "https://www.strava.com/oauth/token",
@@ -41,3 +41,10 @@ $(document).ready(function () {
     'use strict';
     ffProto.init();
 });
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
