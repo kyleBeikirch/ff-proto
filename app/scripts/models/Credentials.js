@@ -11,7 +11,7 @@ ffProto.Models = ffProto.Models || {};
     		'client_id' : '48',
             'client_secret' : '2776c1edb8022ecef401bb0cb92a3c882dc393b7',
             'code' : '47faa4feffbff3f32e1256bc34e5773f5f152abc',
-            'access_token' : '1970b06b4f575a7efc452037ad71c3d0ac795f95'
+            'access_token' : '1c0671b1a32718d52803d52ada111b617d461c5a'
   		},
   		initialize: function(){
     		console.log('This model has been initialized.');
