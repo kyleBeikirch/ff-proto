@@ -7,7 +7,9 @@ var app = {
     init: function () {
         'use strict';
         console.log('Hello from Backbone!');
-        var myCredentials = new app.CredentialsModel();   
+        app.credentials = new app.CredentialsModel();
+        var athletes = new app.Riders(); 
+        athletes.fetch();  
     }
 };
 
