@@ -1,7 +1,5 @@
 /*global ffProto, $*/
-
-
-window.ffProto = {
+var app = {
     Models: {},
     Collections: {},
     Views: {},
@@ -9,19 +7,11 @@ window.ffProto = {
     init: function () {
         'use strict';
         console.log('Hello from Backbone!');
-        var myCredentials = new ffProto.Models.CredentialsModel();   
+        var myCredentials = new app.CredentialsModel();   
     }
 };
 
 
 $(document).ready(function () {
-    'use strict';
-    ffProto.init();
+    app.init();
 });
-
-function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}

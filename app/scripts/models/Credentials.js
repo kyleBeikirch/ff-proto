@@ -1,20 +1,14 @@
-/*global ffProto, Backbone*/
+var app = app || {};
 
-ffProto.Models = ffProto.Models || {};
-
-(function () {
-    'use strict';
-
-    ffProto.Models.CredentialsModel = Backbone.Model.extend({
-
-    	defaults: {
-    		'client_id' : '48',
-            'client_secret' : '2776c1edb8022ecef401bb0cb92a3c882dc393b7',
-            'code' : '47faa4feffbff3f32e1256bc34e5773f5f152abc',
-            'access_token' : '1c0671b1a32718d52803d52ada111b617d461c5a'
-  		},
-  		initialize: function(){
-    		console.log('This model has been initialized.');
+app.CredentialsModel = Backbone.Model.extend({
+   	defaults: {
+    	'client_id' : '48',
+        'client_secret' : '2776c1edb8022ecef401bb0cb92a3c882dc393b7',
+        'code' : '47faa4feffbff3f32e1256bc34e5773f5f152abc',
+      	'access_token' : '1c0671b1a32718d52803d52ada111b617d461c5a',
+        'club_id' : '3641'
+  	},
+  	authorize: function(){
     		$.ajax({
 	            type: "POST",
 	            jsonp : false,
@@ -39,9 +33,4 @@ ffProto.Models = ffProto.Models || {};
         		console.log('- Values for this model have changed.');
     		});
   		}
-
-
-
-    });
-
-})();
+});
