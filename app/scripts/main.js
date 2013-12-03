@@ -8,10 +8,12 @@ var app = {
         'use strict';
         console.log('Hello from Backbone!');
         app.credentials = new app.CredentialsModel();
-        var athletes = new app.Riders(); 
-        athletes.fetch(); 
-        var activities = new app.Rides();
-        activities.fetch();
+        app.athletes = new app.Riders(); 
+        app.athletes.fetch(); 
+        app.activities = new app.Rides();
+        app.activities.show();
+        app.activities.fetch();
+
     }
 };
 
