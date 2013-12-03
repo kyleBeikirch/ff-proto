@@ -9,7 +9,9 @@ var app = {
         console.log('Hello from Backbone!');
         app.credentials = new app.CredentialsModel();
         var athletes = new app.Riders(); 
-        athletes.fetch();  
+        athletes.fetch(); 
+        var activities = new app.Rides();
+        activities.fetch();
     }
 };
 
