@@ -38,8 +38,7 @@ app.Rides = Backbone.Collection.extend({
     },
     addRouteToMap: function(path) {
         var decodedPath = google.maps.geometry.encoding.decodePath(path);
-        //var decodedLevels = decodeLevels("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-
+    
         var setRegion = new google.maps.Polyline({
             path: decodedPath,
             strokeColor: "#FF0000",
