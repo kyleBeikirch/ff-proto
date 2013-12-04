@@ -6,13 +6,13 @@ var app = {
     Routers: {},
     init: function () {
         'use strict';
-        console.log('Hello from Backbone!');
         app.credentials = new app.CredentialsModel();
         app.athletes = new app.Riders(); 
         app.athletes.fetch(); 
         app.activities = new app.Rides();
-        app.activities.show();
         app.activities.fetch();
+        app.mapper = new app.MapView();
+        
 
     }
 };
