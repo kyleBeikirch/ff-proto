@@ -13,6 +13,7 @@ var app = {
         app.activities.fetch();
         app.mapper = new app.MapView();
         app.riderList = new app.RidersView();
+        app.hope = new app.HopeView();
         
 
     }
