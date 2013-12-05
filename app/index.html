@@ -33,6 +33,13 @@
             </nav>
         </header>
         <div id="map"></div>
+        <div id="users">
+            <input class="search" placeholder="Search" />
+            <button class="sort" data-sort="firstname">
+                Sort by name
+            </button>
+            <ul class="list"></ul>
+         </div>
         <footer></footer>
 
 
@@ -51,6 +58,7 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/list/list.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
@@ -61,6 +69,7 @@
         <script src="scripts/models/activity.js"></script>
         <script src="scripts/collections/rides.js"></script>
         <script src="scripts/views/mapView.js"></script>
+        <script src="scripts/views/ridersView.js"></script>
         <!-- endbuild -->
 </body>
 </html>

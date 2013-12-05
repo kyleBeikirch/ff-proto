@@ -12,6 +12,7 @@ var app = {
         app.activities = new app.Rides();
         app.activities.fetch();
         app.mapper = new app.MapView();
+        app.riderList = new app.RidersView();
         
 
     }

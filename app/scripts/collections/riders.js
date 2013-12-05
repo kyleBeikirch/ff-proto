@@ -20,6 +20,7 @@ app.Riders = Backbone.Collection.extend({
         _(response).each(function(item) {
             that.add( item );
         });
+        
         return response.results;
     }
 
